@@ -1,24 +1,26 @@
 // stampare nella console i numeri
-for (let i = 0; i <=100; i++){
+for (let i = 1; i <=100; i++){
 
     // definire se è multiplo di 3, di 5 o entrambi
     let multiple;
 
     if (i % 15 === 0) {
-        multiple = "FizzBuzz";
+        multiple = "fizzbuzz";
     } else if (i % 3 === 0) {
-        multiple = "Fizz";
+        multiple = "fizz";
     } else if (i % 5 === 0) {
-        multiple = "Buzz";
-    } 
+        multiple = "buzz";
+    } else {
+        multiple = i;
+    }
 
-    // stampare
-    console.log(i, multiple);
+    console.log(multiple);
+    
+    // stampare nell' html
+    const rowResult = document.querySelector('.row');
+
+    rowResult.innerHTML += `<div class="box ${multiple}">${multiple}</div> ` 
 }
 
-// stampo i numeri nella pagina
-const rowWrapper = document.querySelector('.row');
 
-for (let i = 0; i <= 100; i++) {
-    rowWrapper.innerHTML += `<div class="box">${i}</div> ` 
-}
+
